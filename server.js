@@ -4,6 +4,8 @@ var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 var methodOverride = require('method-override');
+var mongoUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/auth';
+port = process.env.PORT || 3000;
 
 app.use(methodOverride('_method'));
 app.use(bodyParser.urlencoded({extended:false}));
@@ -34,12 +36,13 @@ app.get('/app', function(req, res){
     }
 });
 
-mongoose.connect('mongodb://localhost:27017/auth');
+mongoose.connect(mongoUri);
 
 mongoose.connection.once('open', function(){
     console.log('connected to mongo');
 });
 
-app.listen(3000, function(){
-    console.log('listening...');
-});
+app.listen(port);
+console.log('---------------------------------');
+console.log('Server running on port: ' + port);
+console.log('---------------------------------');
