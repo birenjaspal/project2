@@ -5,7 +5,7 @@
     justify-content: space-between;
     padding: 1vh 2vw;
     background: #486faf;
-    color: white;
+    color: lightgrey;
 }
 
 .topbar-left {
@@ -61,9 +61,14 @@ img {
     flex-direction: column;*/
 }
 
+.maincontent {
+  /*height: 20vh;
+  background: salmon;
+  opacity: .2;*/
+}
 
 .bottombar {
-    height: 20vh;
+    /*height: 20vh;
     background: salmon;
-    opacity: .2;
+    opacity: .2;*/
 }

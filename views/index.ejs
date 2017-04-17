@@ -24,6 +24,7 @@
                 <input type="submit" value="Logout"/>
               </form>
             </nav>
+
           <% } else { %>
             <!-- <a href="/sessions/new">Log In</a> -->
             <form action="/sessions" method="POST">
@@ -33,8 +34,13 @@
             </form>
             <font size="2"> <i>Not a User Yet?  </i>Register <a href="/users/new">here</a></font>
           <% } %>
-
         </div>
+      </div>
+      <div class="maincontent">
+        <% if(currentUser) { %>
+          <h1> logged in content here </h1>
+          <% } else { %>
+      <% } %>
       </div>
       <div class="bottombar"></div>
     </header>
